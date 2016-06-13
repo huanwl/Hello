@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div >
+	<div name='header' class='text-center'>
+		<h2>我 的 部 落 格</h2>
+	</div>
+	<br/><br/>
+	<div name='content' class="row">
+		<div class='col-md-2 text-center bg-danger' 
+				style="padding-bottom: 50px;">
+			<h3>廣<br/>告<br/>左</h3>
+		</div>
+		<div class='col-md-8'>
+			<%= yield %>
+		</div>
+		<div class='col-md-2 text-center bg-danger' 
+				style='padding-bottom: 50px;'>		
+			<h3>廣<br/>告<br/>右</h3>
+		</div>
+	</div>
+	<br/><br/><br/>
+	<div name='footer' class="text-center bg-warning" 
+					   style="padding-top: 10px; padding-bottom: 10px">
+		<h4>I am footer, and copyright by Wayne.</h4>
+	</div>
+</div>
+</body>
+</html>
+
+
+

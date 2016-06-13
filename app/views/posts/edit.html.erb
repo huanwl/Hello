@@ -1,0 +1,7 @@
+<h1>編輯文章</h1>
+
+<%= form_for @post do |f| %>
+	<%= f.text_field :Title %><br>
+	<%= f.text_area :Content %><br>
+	<%= f.submit %>
+<% end %>
