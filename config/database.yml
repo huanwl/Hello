@@ -1,0 +1,25 @@
+
+# Use MySQL
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: MyFirstDb
+  host: localhost
+  username: root
+  password: 1107
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: MyFirstDb
+  host: localhost
+  username: root
+  password: 1107
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: MyFirstDb
+  host: localhost
+  username: root
+  password: 1107

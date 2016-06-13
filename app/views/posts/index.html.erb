@@ -1,0 +1,55 @@
+
+<div style='margin-bottom: 10px'>
+	<%= link_to '新文章',{action: 'new'}, class: 'btn btn-success' %>
+</div>
+
+<div style="height:330px" >
+	<table class='table table-border table-striped table-hover'>
+	<thead>
+		<tr class='info'>
+		<td>#</td>
+		<td>標題</td>
+		<td>內容</td>
+		<td>建立時間</td>
+		<td>更新時間</td>
+		<td>功能</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% i = @i*@pageSize %>
+		<% @posts.each do |post| %>
+		<tr>
+			<td><%= i+=1 %></td>
+			<td>
+			<%= link_to post.Title, post %>
+			</td>
+			<td>
+			<%= post.Content %>
+			</td>
+			<td>
+			<%= post.created_at.strftime("%Y-%m-%d") %>
+			</td>
+			<td>
+			<%= post.updated_at.strftime("%Y-%m-%d") %>
+			</td>
+			<td>
+				<%= link_to '編輯', {id: post.id, action: 'edit'}, 
+					class: 'btn btn-warning' %>
+				<%= link_to '刪除', post, method: :delete, 
+					class: 'btn btn-danger' %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+	</table>
+</div>
+
+<div class="text-center" style="font-size: 14pt">
+	<span><&nbsp;&nbsp;</span>
+	<% for i in 1..(@pageCount) %>
+		<%= link_to i,  {page: i, action: 'index'} %>&nbsp;&nbsp;
+	<% end %>
+	<span>></span>
+</div>
+
+

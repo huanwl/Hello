@@ -1,0 +1,7 @@
+<h1>新增文章</h1>
+
+<%= form_tag posts_path do %>
+	<%= text_field_tag :Title %><br>
+	<%= text_area_tag :Content %><br>
+	<input type='submit'>
+<% end %>
