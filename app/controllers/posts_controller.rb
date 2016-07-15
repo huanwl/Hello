@@ -1,12 +1,8 @@
 class PostsController < ApplicationController
+	include PagesHelper
+
 	def index
-		@pageSize = 5
-		@postTotal = Post.count
-		@pageCount =  (@postTotal / @pageSize).to_i
-		@pageCount += @postTotal % @pageSize == 0 ? 0 : 1
-		index = params[:page] == nil ? 1 : params[:page]
-		@i = index.to_i - 1
-  		@posts = Post.limit(@pageSize).offset(@i*@pageSize)
+  		@posts = getPages(Post)
   	end
 
 	def show
