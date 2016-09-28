@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   	end
 
 	def show
+        @post = Post.find(params[:id])
 	end
 
 	def new
@@ -47,4 +48,3 @@ class PostsController < ApplicationController
   		params.require(:post).permit(:Title, :Content)
 	end
 end
-
